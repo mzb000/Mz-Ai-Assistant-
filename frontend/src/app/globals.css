@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  ::selection { @apply bg-neon-500/30 text-neon-200; }
+  ::-webkit-scrollbar { @apply w-2; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-surface2 rounded-full hover:bg-border; }
+}
+
+@layer components {
+  .glass {
+    @apply bg-surface/80 backdrop-blur-xl border border-white/5;
+  }
+  .glass-hover {
+    @apply hover:bg-surface2/80 hover:border-neon-500/20 transition-all duration-300;
+  }
+  .neon-border {
+    @apply border border-neon-500/30 shadow-[0_0_10px_rgba(0,195,255,0.1)];
+  }
+  .neon-glow {
+    @apply shadow-[0_0_15px_rgba(0,195,255,0.3)] shadow-neon-500/20;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-neon-400 to-purple-400 bg-clip-text text-transparent;
+  }
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-muted hover:text-foreground hover:bg-surface2/50 transition-all duration-200 cursor-pointer;
+  }
+  .sidebar-item.active {
+    @apply bg-neon-500/10 text-neon-400 neon-border;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-300 { animation-delay: 0.3s; }
+  .animate-delay-400 { animation-delay: 0.4s; }
+  .animate-delay-500 { animation-delay: 0.5s; }
+}
